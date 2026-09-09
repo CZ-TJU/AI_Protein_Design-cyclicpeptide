@@ -1,0 +1,10 @@
+candidate_id,sequence,length,generator,iptm,ddg_kcal_per_mol,contact_molecular_surface,bli_signal_20260520,notes
+KCP8_9,GFNGDPFF,8,RFdiffusion+ProteinMPNN,0.79,-33.350,,有结合信号,AF3 结合态与 simple 游离态构象接近，具预组织特征
+KCP8_11,SGSPTVVA,8,RFdiffusion+ProteinMPNN,0.77,-28.441,,无明显结合信号,AF3/Rosetta 完成计算的候选
+KCP8_20,GLPDDGPV,8,RFdiffusion+ProteinMPNN,0.80,-25.490,,无明显结合信号,ipTM 高但 BLI 未见明显信号，作为 ipTM 局限性案例
+KCP9_15,GASDDGIIP,9,RFdiffusion+ProteinMPNN,0.80,-36.638,,有结合信号,AF3/Rosetta 完成计算的候选
+KCP10_1,SNLQISPADD,10,RFdiffusion+ProteinMPNN,0.77,-29.946,,无明显结合信号,第一批长度 10 代表候选
+KCP_BZ_002,SFFDRVTGEVF,11,BoltzGen,0.74,-40.549,342.568,有结合信号,第二批合成候选；后续复测 Kd ~ 9 uM
+KCP_BZ_003,FDERVYGIPSSP,12,BoltzGen,0.80,-48.230,372.849,有结合信号,第二批合成候选；ddG 最低
+KCP_BZ_007,MTGFDRVTGELF,12,BoltzGen,0.73,-41.293,342.813,有结合信号,第二批合成候选
+KCP_BZ_010,MFPELGDGSP,10,BoltzGen,0.77,-38.343,312.212,有结合信号,第二批合成候选；能量漏斗/构象分析代表候选

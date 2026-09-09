@@ -1,0 +1,46 @@
+# cycpep_Kelch 设计参数汇总
+# 说明：仅收录 D:\KEAP1 中可确认的参数；RFdiffusion/ProteinMPNN 的
+# 精确命令行未在源数据中找到，若后续补齐 flags 文件需同步更新本文件。
+
+target:
+  name: "Keap1 Kelch 结构域"
+  pdb: "3WN7"
+  chain: "A"
+
+hotspots:
+  HS1: "hotspots_HS1.txt"   # 27 个表层/经典 Nrf2 结合口袋残基，用于初始设计
+  HS2: "hotspots_HS2.txt"   # 18 个深口袋残基，用于结合深度重构验证
+
+lengths:
+  HS1_stage1: [8, 9, 10, 11, 12, 13, 14, 15]   # 长度趋势探索
+  HS1_production: [8, 9, 10]                    # 趋势结论后的重点区间
+  HS2_validation: [8, 9, 10, 11]                # 深热点验证区间
+  BoltzGen: [10, 11, 12]                        # 骨架-序列联合生成区间
+
+rfdiffusion:
+  # 源数据可确认的参数
+  denoising_noise: 1
+  checkpoints: ["complex_base_ckpt", "complex_beta_ckpt"]
+  note: "各长度筛选 8-9 个骨架进入下游；具体 contig/hotspot 命令行未见，待补 flags。"
+
+proteinmpnn:
+  note: "对每个骨架生成多条序列并按 global_score/最低分序列进入 AF3；每骨架生成条数在各记录中不同，待按实际 flags 确定。"
+
+alphafold3:
+  metric: "ipTM"
+  local_seed: 42378            # 从本地 AF3 输出 ranking_scores.csv / seed-42378_sample-* 确认
+  num_samples: 5               # seed-42378_sample-0..4
+  server: "https://alphafoldserver.com/"
+  note: "初筛阈值约 ipTM >= 0.72~0.75（两批筛选口径略有差异）。"
+
+rosetta:
+  relax_command: "mpirun -np 10 rosetta_scripts.mpi.linuxgccrelease @flags_cycpep_target_relax"
+  score_command: "mpirun -np 50 score_jd2.mpi.linuxgccrelease @flags_evaluaton_cycpep"
+  relax_models_per_candidate: 1000
+  metrics: ["ddG", "contact_molecular_surface", "RMSD-ddg 能量漏斗"]
+
+simple_cycpep_predict:
+  sampling_command: "mpirun -np 25 simple_cycpep_predict.mpi.linuxgccrelease @flags_simple_cycpep_predict"
+  score_command: "mpirun -np 50 score_jd2.mpi.linuxgccrelease @flags_score_jd2"
+  models_per_peptide: 5000
+  purpose: "游离态构象采样，与 AF3 结合态构象比较，评估构象预组织"
