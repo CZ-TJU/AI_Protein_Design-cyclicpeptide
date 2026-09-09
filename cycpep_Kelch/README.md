@@ -1,4 +1,4 @@
-# cycpep_Kelch：Keap1 Kelch（PDB 3WN7）环肽从头设计复现说明
+# cycpep_Kelch：Keap1 Kelch（PDB 3WN7）环肽从头设计
 
 本目录对应靶标 1：**Keap1 Kelch 结构域（PDB 3WN7，链 A）**。目录只保存该靶标特有的配置、输入数据、结果与记录；共享代码位于 `src/`，一键脚本入口为 `scripts/run_all.sh`。
 
