@@ -5,12 +5,12 @@
 ## 2. 运行环境
 
 - 操作系统：Linux x86_64【待补充：实际发行版与内核】
-- Python 解释器：【待补充：版本】；依赖清单见 requirements.txt（或 environment.yml）
+- Python 解释器：【待补充：版本】
 - 深度学习环境：【待补充：CUDA、驱动版本】；GPU 型号与显存：【待补充】
-- 第三方软件（均为开源/科研软件，来源与许可证见第 7 节）：
+- 第三方软件（均为开源/科研软件）：
   - RFdiffusion（GitHub: RosettaCommons/RFdiffusion）【版本待补充】
   - ProteinMPNN（GitHub: dauparas/ProteinMPNN）【版本待补充】
-  - BoltzGen（本地部署版本）【版本/commit 待补充】
+  - BoltzGen（本地部署版本）【版本待补充】
   - AlphaFold3 本地版与 AlphaFold 在线预测平台（https://alphafoldserver.com/）
   - Rosetta（rosetta_scripts.mpi.linuxgccrelease / score_jd2.mpi.linuxgccrelease）【版本待补充】
   - simple_cycpep_predict（本组部署脚本）【版本待补充】
