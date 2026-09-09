@@ -1,6 +1,6 @@
 ## 1. 项目说明
 
-本项目实现“AI 生成—多层级计算筛选—实验候选输出”的环肽从头设计流程，面向 Keap1 Kelch 结构域（PDB 3WN7）与 GCGR（PDB 8JIT）/GIPR 两类靶标分别形成 `cycpep_Kelch` 与 `cycpep_GCGR` 两个靶标目录。除靶标结构与热点约束不同外，两套流程共用同一份计算代码（src/），每个靶标目录只保存该靶标的配置、数据、脚本入口与结果，输出标准化候选清单 results.csv（或 results.xlsx），供后续固相合成与湿实验验证使用。
+本项目实现“AI 生成—多层级计算筛选—体外/细胞实验验证”的环肽从头设计流程，面向 Keap1 Kelch 结构域（PDB 3WN7）与 GCGR（PDB 8JIT）/GIPR 两类靶标分别形成 `cycpep_Kelch` 与 `cycpep_GCGR` 两个靶标目录。除靶标结构与热点约束不同外，两套流程共用同一份计算代码（src/），每个靶标目录只保存该靶标的配置、数据、脚本入口与结果，输出标准化候选清单 results.csv（或 results.xlsx），供后续固相合成与湿实验验证使用。
 
 ## 2. 运行环境
 
@@ -35,7 +35,7 @@
 | PyRosetta | PyRosetta-4 2021；具体版本：Release 2024.31 + release |
 | RFdiffusion | 本地部署（GitHub: RosettaCommons/RFdiffusion）【版本待补充】 |
 | ProteinMPNN | 本地部署（GitHub: dauparas/ProteinMPNN）【版本待补充】 |
-| BoltzGen | 本地部署版本【版本/commit 待补充】 |
+| BoltzGen | 本地部署版本【版本待补充】 |
 | AlphaFold3 | 本地部署；另可配合 AlphaFold 在线预测平台（https://alphafoldserver.com/） |
 | Rosetta | 本地部署（rosetta_scripts.mpi.linuxgccrelease / score_jd2.mpi.linuxgccrelease）【版本待补充】 |
 | simple_cycpep_predict | 本组部署脚本【版本待补充】 |
